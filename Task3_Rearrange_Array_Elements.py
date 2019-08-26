@@ -85,5 +85,12 @@ def merge(left, right):
 
 
 if __name__ == '__main__':
+    # Test1 edge case: should return [11,11]
+    test_function([[1, 1, 1, 1], [11, 11]])
+
+    # Test2 edge case: should return [100,10]
+    test_function([[1, 1, 0, 0, 0], [100, 10]])
+
+    # Test3 normal case:
     test_function([[1, 2, 3, 4, 5], [542, 31]])
     test_function([[4, 6, 2, 5, 9, 8], [964, 852]])

@@ -27,6 +27,9 @@ def sqrt(number):
     Returns:
        int: Floored Square Root
     """
+    if number < 0:
+        print("Error! Please enter valid number")
+        return
     # Since the time complexity is O(log(n)), binary search algo should be considered
     left, right = 0, number
 
@@ -43,8 +46,14 @@ def sqrt(number):
 
 
 if __name__ == '__main__':
-    print("Pass" if (3 == sqrt(9)) else "Fail")
+    # Task1 edge case, should return 0
     print("Pass" if (0 == sqrt(0)) else "Fail")
+
+    # Task2 edge case, should return Assertion message
+    sqrt(-1)
+
+    # Task 3 normal test
+    print("Pass" if (3 == sqrt(9)) else "Fail")
     print("Pass" if (4 == sqrt(16)) else "Fail")
     print("Pass" if (1 == sqrt(1)) else "Fail")
     print("Pass" if (5 == sqrt(27)) else "Fail")
