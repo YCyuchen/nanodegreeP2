@@ -34,8 +34,7 @@ class TrieNode:
 
         self.suffixes_recursive(current, suffix)
 
-        for letters in self.word_list:
-            print(letters)
+        print(self.word_list)
 
     def suffixes_recursive(self, current, suffix):
         if current.is_word:
@@ -76,11 +75,32 @@ class Trie:
 if __name__ == '__main__':
     MyTrie = Trie()
     wordList = [
-        "anthology", "antagonist", "antonym", "ant", "anno",
+        "anthology", "antagonist", "antonym", "ant",
         "fun", "function", "factory", "apple", "trie", "trigger", "trigonometry", "tripod"]
 
     for word in wordList:
         MyTrie.insert(word)
 
-    prefixNode = MyTrie.find("an")
-    print((prefixNode.suffixes()))
+
+    def f(prefix):
+        if prefix != '':
+            prefixNode = MyTrie.find(prefix)
+            # print('prefixNode: ', prefixNode)
+            if prefixNode:
+                print(prefixNode.suffixes())
+            else:
+                print(prefix + " not found")
+        else:
+            print(str(MyTrie))
+            print('')
+
+    # Test1 edge test, prefix not exit
+    f("1")
+    print("---------------")
+    # Test2
+    f("an")
+    print("---------------")
+    # Test3 edge test, prefix not exit
+    f("faa")
+
+
