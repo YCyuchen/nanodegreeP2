@@ -9,4 +9,4 @@ Our RouteTrie class will also have a handler denoted by the "/" root slash as in
 The RouteTrie class will also have a find() method that will iterate over the URL path parts and return the node's handler.  Similarly, we check if that part is in the current node's children. If so, we set current to that node's key else return None. Finally return the current node's handler.
 
 Time complexity is $O(M*N)$, N is the number of strings in Trie and M is the longest string length in Trie.
-Space complexity is O(N), N is number of keys in Trie
+Space complexity is O(K*N), K is the key length, N is number of keys in Trie
