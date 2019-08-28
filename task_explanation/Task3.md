@@ -14,4 +14,4 @@ Thus we sort the the list with merge sort algorithm, Costing time  O(nlog(n)), t
 ![-w331](media/15668328150810/15668341531803.jpg)
 </center>
 Time complexity for is $O(nlog(n))$ 
-Space complexity is O(1) ,cost by the merge list.
+Space complexity is O(N) ,N is the number in input list, cost by the merge list.

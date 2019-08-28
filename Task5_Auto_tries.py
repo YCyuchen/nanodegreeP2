@@ -19,29 +19,21 @@ class TrieNode:
         # Add a child node in this Trie
         self.children[char] = TrieNode()
 
-    def suffixes(self, suffix=''):
+    def suffixes(self, cur=None, suffix='', word_list=None):
         # Recursive function that collects the suffix for
         # all complete words below this point
-        current = self
-        suffix = ""
 
-        for char in current.children.keys():
-            if not current.children[char]:
-                break
+        if word_list == None:
+            word_list = self.word_list
+            cur = self
 
-            suffix += char
-            current = current.children[char]
+        if cur.is_word == True:
+            word_list.append(suffix)
 
-        self.suffixes_recursive(current, suffix)
+        for char in cur.children.keys():
+            self.suffixes(suffix + char, cur.children[char], word_list)
 
-        print(self.word_list)
-
-    def suffixes_recursive(self, current, suffix):
-        if current.is_word:
-            self.word_list.append(suffix)
-
-        for k, v in current.children.items():
-            self.suffixes_recursive(v, suffix + k)
+        return word_list
 
 
 # The Trie itself containing the root node and insert/find functions
@@ -94,13 +86,12 @@ if __name__ == '__main__':
             print(str(MyTrie))
             print('')
 
+
     # Test1 edge test, prefix not exit
     f("1")
     print("---------------")
     # Test2
-    f("an")
+    f("a")
     print("---------------")
     # Test3 edge test, prefix not exit
-    f("faa")
-
-
+    f("ann")

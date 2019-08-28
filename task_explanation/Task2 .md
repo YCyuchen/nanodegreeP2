@@ -8,4 +8,4 @@ Searching a sorted rotated array requires finding a pivot like element to help u
 I implement a mini binary search on each mini part . 
 
 Time complexity for binary search is $O(log N)$ 
-Space complexity is O(1) based on how many or "N" elements we have in our array.
+Space complexity is O(N) based on how many or "N" elements we have in our array.

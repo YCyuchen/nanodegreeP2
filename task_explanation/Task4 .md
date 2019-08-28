@@ -10,5 +10,5 @@ We can only traverse the list once and return a sorted list. Since there is only
 <center>
 ![-w439](media/15668345723106/15668347714259.jpg)
 </center>
-Time complexity for binary search is $O(N)$, N is the length of the input list 
+Time complexity for sort the array in a single traversal is $O(N)$, N is the length of the input list
 Space complexity is O(N), N is the length of the input list 

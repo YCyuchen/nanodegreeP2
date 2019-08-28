@@ -64,6 +64,7 @@ class Router:
     def lookup(self, path):
         current = self.router
         parts = self.split_path(path)
+        print("parts", parts)
         return current.find(parts)
 
     def split_path(self, path):

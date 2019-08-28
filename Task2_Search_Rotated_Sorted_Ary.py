@@ -70,6 +70,12 @@ def test_function(test_case):
 
 
 if __name__ == '__main__':
+    # edge test, empty list should return -1
+    test_function([[], 1])
+    # edge test, sorted list should return 4
+    test_function([[1,2,3,4,5], 5])
+
+    # normal test
     test_function([[6, 7, 8, 9, 10, 1, 2, 3, 4], 6])
     test_function([[6, 7, 8, 9, 10, 1, 2, 3, 4], 1])
     test_function([[6, 7, 8, 1, 2, 3, 4], 8])
