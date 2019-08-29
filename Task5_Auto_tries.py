@@ -19,7 +19,7 @@ class TrieNode:
         # Add a child node in this Trie
         self.children[char] = TrieNode()
 
-    def suffixes(self, cur=None, suffix='', word_list=None):
+    def suffixes(self, suffix='', cur=None, word_list=None):
         # Recursive function that collects the suffix for
         # all complete words below this point
 
